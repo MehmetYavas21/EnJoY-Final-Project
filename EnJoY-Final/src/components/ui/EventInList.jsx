@@ -9,9 +9,12 @@ export const EventInList = ({
   categories,
   handleDeleteEvent,
 }) => {
-  const user = users.find((user) => user.id === event?.createdBy);
-
-  const category = categories.find((cat) => cat.id === event?.categoryIds);
+  const user = users.find(
+    (user) => parseInt(user.id) === parseInt(event?.createdBy)
+  );
+  const category = categories.find(
+    (cat) => parseInt(cat.id) === parseInt(event?.categoryIds)
+  );
 
   return (
     <Box p={4} borderWidth="1px" borderRadius="md" shadow="lg" bg="gray.100">
