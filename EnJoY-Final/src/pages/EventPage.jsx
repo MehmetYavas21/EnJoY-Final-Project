@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Text, Flex, Center, Button } from "@chakra-ui/react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
-import { EditEvent } from "../components/ui/EditEvent";
 import { Event } from "../components/ui/Event";
 
 export const loader = async ({ params }) => {
@@ -27,11 +26,6 @@ export const loader = async ({ params }) => {
 
 export const EventPage = () => {
   const { event, users, categories } = useLoaderData();
-
-  const [editing, setEditing] = useState(false);
-  const handleEdit = () => {
-    setEditing(!editing);
-  };
 
   const navigate = useNavigate();
 
@@ -68,28 +62,18 @@ export const EventPage = () => {
 
   return (
     <Center flexDir="column" alignItems="center">
-      {editing ? (
-        // Render the edit form here
-        // Add form elements to edit the event details
-        <EditEvent />
-      ) : (
-        <>
-          <Event users={users} event={event} categories={categories} />
-        </>
-      )}
-      {!editing && (
-        <Flex p={4} flexDir="row" justify="space-between" align="center">
-          <Button
-            onClick={handleEdit}
-            style={{ background: "#04765f", color: "white" }}
-          >
+      <Event users={users} event={event} categories={categories} />
+
+      <Flex p={4} flexDir="row" justify="space-between" align="center">
+        <Link to={`/event/edit/${event.id}`}>
+          <Button style={{ background: "#319795", color: "white" }}>
             Edit
           </Button>
-          <Button ml={2} onClick={handleDeleteEvent} colorScheme="red">
-            Delete
-          </Button>
-        </Flex>
-      )}
+        </Link>
+        <Button ml={2} onClick={handleDeleteEvent} colorScheme="red">
+          Delete
+        </Button>
+      </Flex>
     </Center>
   );
 };
