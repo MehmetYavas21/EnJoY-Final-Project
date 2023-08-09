@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router";
 import { CategoryFilter } from "../components/CategoryFilter";
 import { EventsList } from "../components/EventsList";
 import { Link, redirect } from "react-router-dom";
+import { HeroSection } from "../components/HeroSection";
 
 export const loader = async () => {
   const events = await fetch("http://localhost:3000/events");
@@ -101,6 +102,9 @@ export const EventsPage = () => {
       >
         Find Your Event or Create an Event
       </Heading>
+      <Box p={6}>
+        <HeroSection events={events} />
+      </Box>
       <Flex justify="space-between">
         <Box p={4}>
           <TextInput changeFn={handleChange} />
