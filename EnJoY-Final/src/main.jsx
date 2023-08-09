@@ -6,7 +6,7 @@ import { Root } from "./components/Root";
 import {
   EventUserForm,
   loader as formLoader,
-} from "./components/EventUserForm"; // Import the EventUserForm component
+} from "./components/EventUserForm";
 import { EventPage, loader as postLoader } from "./pages/EventPage";
 import { EventsPage, loader as postListLoader } from "./pages/EventsPage";
 import { User, loader as userLoader } from "./components/User";
