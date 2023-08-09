@@ -2,7 +2,7 @@ import { Select } from "@chakra-ui/react";
 
 export const CategoryFilter = ({ categories, handleFilter }) => {
   const handleChange = (event) => {
-    const selectedCategory = event.target.value;
+    const selectedCategory = parseInt(event.target.value);
     handleFilter(selectedCategory);
   };
 
