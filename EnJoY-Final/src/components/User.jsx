@@ -1,4 +1,4 @@
-import { Card, Flex, Heading, Text } from "@chakra-ui/react";
+import { Card, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import { Link, useLoaderData } from "react-router-dom";
 
 export const loader = async ({ params }) => {
@@ -36,13 +36,20 @@ export const User = () => {
         <Heading>{user.name}</Heading>
       </Flex>
       <Text m="auto" pt="5%">
-        Already arranged events
+        Already arranged events Test
       </Text>
-
-      <Flex justifyContent="center" gap="20%" p="30px">
-        {" "}
+      <SimpleGrid
+        columns={{ sm: 1, md: 2, lg: 3 }}
+        justifyItems="center"
+        gap={5}
+      >
         {event.map((e) => (
-          <ul key={e.id} style={{ listStyle: "none" }}>
+          <Flex
+            key={e.id}
+            style={{ listStyle: "none", margin: "10px" }}
+            flexDir="column"
+            align="center"
+          >
             <Link to={`/event/${e.id}`}>
               <img
                 src={e.image}
@@ -58,11 +65,11 @@ export const User = () => {
               />
             </Link>
             <Link to={`/event/${e.id}`}>
-              <li>{e.title}</li>
+              <Text>{e.title}</Text>
             </Link>
-          </ul>
+          </Flex>
         ))}
-      </Flex>
+      </SimpleGrid>
     </Card>
   );
 };
