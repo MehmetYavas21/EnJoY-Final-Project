@@ -18,7 +18,7 @@ export const loader = async () => {
   };
 };
 
-export const EventUserForm = ({ setMatchedEvents }) => {
+export const EventUserForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [createdBy, setCreatedBy] = useState([]);
@@ -27,24 +27,24 @@ export const EventUserForm = ({ setMatchedEvents }) => {
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [image, setImage] = useState("");
-  const [userImage, setUserImage] = useState("");
+  Array.isArray(categoryIds);
 
   const { categories, users } = useLoaderData();
 
   const handleFilter = (selectedCategory) => {
     if (!selectedCategory) {
-      setCategoryIds("");
+      setCategoryIds([]);
       return;
     }
 
     const categoryId = parseInt(selectedCategory);
 
-    setCategoryIds(categoryId);
+    setCategoryIds([categoryId]);
   };
 
   const handleFilterUser = (selectedUser) => {
     if (!selectedUser) {
-      setCreatedBy("");
+      setCreatedBy();
       return;
     }
 
@@ -90,8 +90,7 @@ export const EventUserForm = ({ setMatchedEvents }) => {
       setStartTime("");
       setEndTime("");
       setImage("");
-      setUserImage("");
-      setMatchedEvents((prevEvents) => [...prevEvents, resp]);
+      return resp;
     } catch (error) {
       console.error("Failed to create event.");
     }
@@ -162,14 +161,7 @@ export const EventUserForm = ({ setMatchedEvents }) => {
             </label>
             <label>
               <span>Who is organizing? :</span>
-              {/* <Input
-                type="text"
-                placeholder="Give Enjoy-Maker's name"
-                name="name"
-                value={createdBy}
-                required="required"
-                onChange={(e) => setCreatedBy(e.target.value)}
-              /> */}
+
               <CategoryFilter
                 categories={users}
                 handleFilter={handleFilterUser}
@@ -188,14 +180,14 @@ export const EventUserForm = ({ setMatchedEvents }) => {
             </label>
             <label>
               <span>Category :</span>
-              {/* <Input
-                type="text"
-                placeholder="Category"
-                name="category"
-                value={categoryIds}
-                required="required"
-                onChange={(e) => setCategoryIds(newCategoryId(e.target.value))}
-              /> */}
+              <CategoryFilter
+                categories={categories}
+                handleFilter={handleFilter}
+              />
+            </label>
+            <label>
+              <span>Second Category (optional) :</span>
+
               <CategoryFilter
                 categories={categories}
                 handleFilter={handleFilter}
