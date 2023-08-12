@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, Flex, Center, Button } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Text, Flex, Center, Button, Box, Select } from "@chakra-ui/react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
 import { Event } from "../components/ui/Event";
@@ -17,15 +17,21 @@ export const loader = async ({ params }) => {
     (res) => res.json()
   );
 
+  const events = await fetch("http://localhost:3000/events").then((res) =>
+    res.json()
+  );
+
   return {
     event: event,
     users: users,
     categories: categories,
+    events: events,
   };
 };
 
 export const EventPage = () => {
-  const { event, users, categories } = useLoaderData();
+  const { event, users, categories, events } = useLoaderData();
+  const [matchedEvent, setMatchedEvent] = useState();
 
   const navigate = useNavigate();
 
@@ -51,6 +57,23 @@ export const EventPage = () => {
     checkAnswer();
   };
 
+  const handleChange = (e) => {
+    const selectedEvent = events.filter((item) => {
+      return item.title === e.target.value;
+    });
+    setMatchedEvent(selectedEvent[0]);
+  };
+
+  const SelectionBox = () => {
+    return (
+      <Select onChange={(ev) => handleChange(ev)}>
+        {events.map((e) => {
+          return <option key={e.id}>{e.title}</option>;
+        })}
+      </Select>
+    );
+  };
+
   if (!event) {
     return (
       <Flex>
@@ -62,7 +85,21 @@ export const EventPage = () => {
 
   return (
     <Center flexDir="column" alignItems="center">
-      <Event users={users} event={event} categories={categories} />
+      {matchedEvent ? (
+        <>
+          <Box m="auto" p="10px">
+            <SelectionBox />
+          </Box>
+          <Event users={users} event={matchedEvent} categories={categories} />
+        </>
+      ) : (
+        <>
+          <Box m="auto" p="10px">
+            <SelectionBox />
+          </Box>
+          <Event users={users} event={event} categories={categories} />
+        </>
+      )}
 
       <Flex p={4} flexDir="row" justify="space-between" align="center">
         <Link to={`/event/edit/${event.id}`}>
