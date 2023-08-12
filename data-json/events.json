@@ -1,0 +1,191 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ignacio Doe",
+      "image": "https://global-uploads.webflow.com/5eecfecbe625d195e35b89f2/624bfb093da7d92733c001c0_Ignacio%20Villafruela%20Rodr%C3%ADguez.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jane Bennett",
+      "image": "https://global-uploads.webflow.com/5eecfecbe625d195e35b89f2/624bfb401d7131c760ca1c63_Elieska%20Lensink.jpg"
+    }
+  ],
+  "events": [
+    {
+      "image": "https://i.pinimg.com/736x/3d/2f/af/3d2faf4e3188d34a9fcdc00df59e77b0.jpg",
+      "title": "Trampoline party 2: Updated: update 2",
+      "description": "Bounce around with your friends// update 12.08",
+      "createdBy": "1",
+      "categoryIds": "3",
+      "location": "My back yard // update 12.08",
+      "startTime": "2023-03-10T18:00 update 12.08",
+      "endTime": "2023-03-10T17:00:00.000Z",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "createdBy": 1,
+      "title": "Laser Tag mania",
+      "description": "Let's play laser tag!",
+      "image": "https://www.ctvnews.ca/polopoly_fs/1.5118552.1600965663!/httpImage/image.jpg_gen/derivatives/landscape_1020/image.jpg",
+      "categoryIds": [
+        2
+      ],
+      "location": "Blinded by the Lights Laser Tag, 15 Main St.",
+      "startTime": "2023-04-06T18:46",
+      "endTime": "2023-04-06T17:46"
+    },
+    {
+      "id": 3,
+      "createdBy": 2,
+      "title": "Badminton game",
+      "description": "Hit that shuttle!",
+      "image": "https://s3.eu-west-2.amazonaws.com/ws-activestirling/production/Badminton/_1200x630_crop_center-center_none/Badminton-3.jpg",
+      "categoryIds": [
+        1,
+        2
+      ],
+      "location": "The Park",
+      "startTime": "2023-03-15T12:00:00.000Z",
+      "endTime": "2023-03-15T13:30:00.000Z"
+    },
+    {
+      "id": 4,
+      "createdBy": 2,
+      "title": "Yoga",
+      "description": "It's a bit of a stretch.",
+      "image": "https://ymcasouthflorida.org/wp-content/uploads/2019/12/AA2I8910-scaled.jpg",
+      "categoryIds": [
+        3
+      ],
+      "location": "Shavasana Yoga School",
+      "startTime": "2023-03-09T06:00:00.000Z",
+      "endTime": "2023-03-09T07:00:00.000Z"
+    },
+    {
+      "image": "https://ursd.org/wp-content/uploads/2020/12/1.png",
+      "title": "third try 2 category Id",
+      "description": "enjoy futnol",
+      "createdBy": "1",
+      "categoryIds": "2",
+      "location": "Essen",
+      "startTime": "wednesday",
+      "endTime": "tomorrow",
+      "id": 27
+    },
+    {
+      "image": "https://cdn.pixabay.com/photo/2016/11/14/05/21/children-1822688_1280.jpg",
+      "title": "Futball",
+      "description": "enjoy futbol",
+      "createdBy": "1",
+      "categoryIds": "2",
+      "location": "Essen",
+      "startTime": "22.08.2023, 18:00",
+      "endTime": "23.12.2023, 00:00",
+      "id": 28
+    },
+    {
+      "image": "https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77702082976.jpg",
+      "title": "Basketball Night",
+      "description": "Watch with friends at home the NBA",
+      "createdBy": "2",
+      "categoryIds": "2",
+      "location": "Online",
+      "startTime": "weekends",
+      "endTime": "tomorrow",
+      "id": 29
+    },
+    {
+      "image": "https://cdn.pixabay.com/photo/2016/03/27/08/49/binary-1282366_1280.jpg",
+      "title": "Code Together Updated 2",
+      "description": "no description",
+      "createdBy": "2",
+      "categoryIds": "3",
+      "location": "Online",
+      "startTime": "everyday",
+      "endTime": "midnight",
+      "id": 30
+    },
+    {
+      "image": "https://wallpapers.com/images/hd/gossip-girl-classy-cast-poster-l7fnr1ayatsy9n0j.jpg",
+      "title": "Gossip night - 2- Edited",
+      "description": "Talk about besties- edit me",
+      "createdBy": "2",
+      "categoryIds": "1",
+      "location": "Essen",
+      "startTime": "22.08.2023, 18:00 -ed",
+      "endTime": "22.08.2023, 20:00",
+      "id": 31
+    },
+    {
+      "image": "https://cdn.pixabay.com/photo/2016/11/14/05/21/children-1822688_1280.jpg",
+      "title": "Futball",
+      "description": "enjoy futbol",
+      "createdBy": "1",
+      "categoryIds": "1",
+      "location": "Essen",
+      "startTime": "22.08.2023, 18:00",
+      "endTime": "23.12.2023, 00:00",
+      "id": 32
+    },
+    {
+      "image": "https://i.pinimg.com/736x/3d/2f/af/3d2faf4e3188d34a9fcdc00df59e77b0.jpg",
+      "title": "google party - Updated",
+      "description": "Bounce around with your -update-",
+      "createdBy": "1",
+      "categoryIds": "1",
+      "location": "My back yard- update",
+      "startTime": "2023-03-10T18:00 -update-",
+      "endTime": "2023-03-10T17:00:00.000Z",
+      "id": 33
+    },
+    {
+      "image": "https://w0.peakpx.com/wallpaper/171/557/HD-wallpaper-boys-in-love-beautiful-natural-night-sky-space-stars-themes.jpg",
+      "title": "Find True Love - Edited ",
+      "description": "love each other long live - edit disc...",
+      "createdBy": "1",
+      "categoryIds": "3",
+      "location": "World- edit...",
+      "startTime": "allways",
+      "endTime": "forever",
+      "id": 34
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Flag_of_Kurdistan.svg/1200px-Flag_of_Kurdistan.svg.png",
+      "title": "Last Event",
+      "description": "Herne Pes",
+      "createdBy": "2",
+      "categoryIds": "3",
+      "location": "Kurdistan",
+      "startTime": "yesterday",
+      "endTime": "the future",
+      "id": 35
+    },
+    {
+      "image": "https://weltausdenfugen.files.wordpress.com/2016/11/kurdistand-auf-der-landkarte.png",
+      "title": "Freedom for Kurdistan",
+      "description": "Make Kurdistan Free, Meet Kurdish All Around the World",
+      "createdBy": "2",
+      "categoryIds": "3",
+      "location": "European Parlement- Brussels",
+      "startTime": "22.08.2023, 10:00",
+      "endTime": "22.08.2023, 20:00",
+      "id": 36
+    }
+  ],
+  "categories": [
+    {
+      "name": "sports",
+      "id": 1
+    },
+    {
+      "name": "games",
+      "id": 2
+    },
+    {
+      "name": "relaxation",
+      "id": 3
+    }
+  ]
+}
