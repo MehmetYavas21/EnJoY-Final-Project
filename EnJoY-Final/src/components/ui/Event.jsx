@@ -3,8 +3,8 @@ import { Img } from "@chakra-ui/image";
 import { Link } from "react-router-dom";
 
 export const Event = ({ event, categories, users }) => {
-  const user = users.find((user) => user.id == event.createdBy);
-  const category = categories.find(
+  const user = users?.find((user) => user.id == event?.createdBy);
+  const category = categories?.find(
     (category) => category.id == event?.categoryIds
   );
   return (
