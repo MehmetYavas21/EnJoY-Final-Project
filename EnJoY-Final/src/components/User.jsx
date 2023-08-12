@@ -22,18 +22,18 @@ export const loader = async ({ params }) => {
 export const User = () => {
   const { user, events } = useLoaderData();
 
-  const event = events.filter((event) => user.id == event.createdBy);
+  const event = events?.filter((event) => user?.id == event.createdBy);
 
   return (
     <Card m="5%" bg="blue.900" color="whiteAlpha.600" shadow="dark-lg">
       <Flex align="center" justifyContent="space-around">
         <img
-          src={user.image}
-          alt={user.name}
+          src={user?.image}
+          alt={user?.name}
           width="200px"
           style={{ borderRadius: "100px", padding: "10px" }}
         />
-        <Heading>{user.name}</Heading>
+        <Heading>{user?.name}</Heading>
       </Flex>
       <Text m="auto" pt="5%">
         Already arranged events Test
@@ -43,7 +43,7 @@ export const User = () => {
         justifyItems="center"
         gap={5}
       >
-        {event.map((e) => (
+        {event?.map((e) => (
           <Flex
             key={e.id}
             style={{ listStyle: "none", margin: "10px" }}
