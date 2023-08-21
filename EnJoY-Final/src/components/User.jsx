@@ -36,7 +36,7 @@ export const User = () => {
         <Heading>{user?.name}</Heading>
       </Flex>
       <Text m="auto" pt="5%">
-        Already arranged events Test
+        My Events
       </Text>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3 }}
